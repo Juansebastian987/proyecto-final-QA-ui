@@ -1,0 +1,84 @@
+<nz-modal
+  [(nzVisible)]="isModalVisible"
+  nzTitle="Options Game"
+  [nzFooter]="modalFooter"
+  >
+  <ng-template nzModalContent class="edit-elements" >
+    <form nz-form [formGroup]="validateForm" class="game-form" (ngSubmit)="submitForm()">
+      
+      <nz-form-item>
+        <nz-form-label [nzSm]="10" [nzXs]="24" nzRequired nzFor="name">Name</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input class="input-form" nz-input formControlName="name" id="name" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSm]="10" [nzXs]="24" nzRequired nzFor="developer">Developer</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input class="input-form" nz-input formControlName="developer" id="developer" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSm]="10" [nzXs]="24" nzRequired nzFor="year">Year</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input class="input-form" nz-input formControlName="year" id="year" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSm]="10" [nzXs]="24" nzRequired nzFor="type">Type</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input class="input-form" nz-input formControlName="type" id="type" />
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-label [nzSm]="10" [nzXs]="24" nzRequired nzFor="console">Console</nz-form-label>
+        <nz-form-control [nzSm]="14" [nzXs]="24">
+          <input class="input-form" nz-input formControlName="console" id="console" />
+        </nz-form-control>
+      </nz-form-item>
+
+    </form>
+  </ng-template>
+  <ng-template #modalFooter>
+    <button nz-button nzType="default" (click)="handleCancel()">Cancel</button>
+    <button nz-button nzType="primary" (click)="handleOk()" [nzLoading]="isConfirmLoading" [disabled]="!validateForm.valid">Save</button>
+  </ng-template>
+</nz-modal>
+
+
+<div>
+  <button nz-button nzType="default" class="table-button" [nzLoading]="loading" (click)="onAdd()">
+    Add Game
+  </button>
+  <button nz-button nzType="default"  class="table-button" [disabled]="setOfCheckedId.size === 0" [nzLoading]="loading" (click)="onDelete()">
+    Delete Game
+  </button>
+</div>
+<nz-table #rowSelectionTable nzShowPagination nzShowSizeChanger [nzData]="listOfData" (nzCurrentPageDataChange)="onCurrentPageDataChange($event)">
+  <thead>
+    <tr>
+      <th [nzChecked]="checked" [nzIndeterminate]="indeterminate" (nzCheckedChange)="onAllChecked($event)"></th>
+      <th>Name</th>
+      <th>Developer</th>
+      <th>Year</th>
+      <th>Type</th>
+      <th>Console</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of rowSelectionTable.data">
+      <td [nzChecked]="setOfCheckedId.has(data.id)" [nzDisabled]="data.isSelected" (nzCheckedChange)="onItemChecked(data.id, $event)"></td>
+      <td>{{ data.name }}</td>
+      <td>{{ data.developer }}</td>
+      <td>{{ data.year }}</td>
+      <td>{{ data.type }}</td>
+      <td>{{ data.console }}</td>
+      <td><button nz-button nzType="default" (click)="onEditGame(data)"><i nz-icon nzType="edit"></i>Edit Game</button></td>
+    </tr>
+  </tbody>
+</nz-table>

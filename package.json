@@ -1,0 +1,19 @@
+{
+  "name": "proyecto-final-qa-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Juansebastian987/proyecto-final-QA-ui.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Juansebastian987/proyecto-final-QA-ui/issues"
+  },
+  "homepage": "https://github.com/Juansebastian987/proyecto-final-QA-ui#readme"
+}
