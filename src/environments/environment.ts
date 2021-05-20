@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:8082',
+  baseUrl: 'https://proyecto-final-qa-back.herokuapp.com/',
 };

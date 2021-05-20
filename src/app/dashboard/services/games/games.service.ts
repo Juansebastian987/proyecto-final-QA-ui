@@ -11,6 +11,6 @@ export class GamesService {
   constructor(private http: HttpClient) { }
 
   getGames(): Observable<IGame[]> {
-    return this.http.get<IGame[]>('http://localhost:8082/games');
+    return this.http.get<IGame[]>('https://proyecto-final-qa-back.herokuapp.com/games');
   }
 }
