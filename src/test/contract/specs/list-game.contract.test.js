@@ -1,6 +1,6 @@
-import { provider } from "./init-pact";
-import { GameService } from "../../../app/pages/dashboard/services/games.service";
-import { Matchers } from "@pact-foundation/pact";
+const { provider } = require("./config/init-pact");
+const GameService = require("../../../app/pages/dashboard/services/games.service");
+const { Matchers } = require("@pact-foundation/pact");
 
 describe("Given an game service", () => {
   describe("When a request to list games is made", () => {

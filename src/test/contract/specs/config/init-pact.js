@@ -1,5 +1,6 @@
-import { Pact } from "@pact-foundation/pact";
-import path from "path";
+const { Pact } = require("@pact-foundation/pact");
+const path = require("path");
+//import path from "path";
 
 export const provider = new Pact({
   consumer: "GameFront",
@@ -9,7 +10,7 @@ export const provider = new Pact({
   log: path.resolve(
     process.cwd(),
     "./test/contract/logs",
-    "GameFront-GamaBack"
+    "GameFront-GamaBack.log"
   ),
   dir: path.resolve(process.cwd(), "./test/contract/pacts"),
 });

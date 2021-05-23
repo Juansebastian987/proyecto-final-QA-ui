@@ -22,3 +22,7 @@ ng build
 
 npm i '@angular/compiler-cli'
 npm i '@angular/compiler'
+
+"@pact-foundation/pact-node": "6.5.0",
+"@pact-foundation/karma-pact": "2.1.3",
+"@pact-foundation/pact-web": "5.3.0"
