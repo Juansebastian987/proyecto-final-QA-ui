@@ -1,16 +1,14 @@
 {
   "name": "proyecto-final-qa-ui",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "ng": "ng",
     "start": "node server.js",
-    "start:dev": "ng serve",
     "prebuild": "npm run config",
     "build": "ng build",
     "test": "ng test",
     "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
+    "test:contract": "jest -c src/test/contract/jest.contract.config.js",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "config": "node set-env.js"
@@ -37,11 +35,14 @@
     "@angular-devkit/build-angular": "^12.0.1",
     "@angular/cli": "~11.1.4",
     "@angular/compiler-cli": "~11.1.2",
+    "@pact-foundation/pact": "^9.15.5",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
+    "dotenv": "^10.0.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
+    "jest": "^26.6.3",
     "karma": "^6.3.2",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.0.3",
@@ -51,15 +52,5 @@
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
     "typescript": "~4.1.2"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Juansebastian987/proyecto-final-QA-ui.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Juansebastian987/proyecto-final-QA-ui/issues"
-  },
-  "homepage": "https://github.com/Juansebastian987/proyecto-final-QA-ui#readme"
+  }
 }
