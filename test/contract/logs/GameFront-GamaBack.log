@@ -1,0 +1,45 @@
+I, [2021-05-23T17:15:55.539060 #20412]  INFO -- : Registered expected interaction GET /games
+D, [2021-05-23T17:15:55.540057 #20412] DEBUG -- : {
+  "description": "a request to get all games",
+  "providerState": "There are games",
+  "request": {
+    "method": "GET",
+    "path": "/games"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+    },
+    "body": {
+      "json_class": "Pact::ArrayLike",
+      "contents": {
+        "id": {
+          "json_class": "Pact::SomethingLike",
+          "contents": "1"
+        },
+        "name": {
+          "json_class": "Pact::SomethingLike",
+          "contents": "Borderlands 3"
+        },
+        "developer": {
+          "json_class": "Pact::SomethingLike",
+          "contents": "GearBox Software"
+        },
+        "year": {
+          "json_class": "Pact::SomethingLike",
+          "contents": 2019
+        },
+        "type": {
+          "json_class": "Pact::SomethingLike",
+          "contents": "Shooter"
+        },
+        "console": {
+          "json_class": "Pact::SomethingLike",
+          "contents": "pc"
+        }
+      },
+      "min": 1
+    }
+  },
+  "metadata": null
+}
