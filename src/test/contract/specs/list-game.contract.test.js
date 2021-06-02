@@ -1,6 +1,6 @@
-const { provider } = require("./config/init-pact");
-const GameService = require("../../../app/pages/dashboard/services/games.service");
+const { provider } = require("../config/init-pact");
 const { Matchers } = require("@pact-foundation/pact");
+import { GamesController } from  '../../../controllers'
 
 describe("Given an game service", () => {
   describe("When a request to list games is made", () => {
@@ -31,9 +31,11 @@ describe("Given an game service", () => {
     });
 
     it("Should return the correct data", async () => {
-      const response = await GameService.getGames();
+      const response = await GamesController.list();
       expect(response.data).toMatchSnapshot();
-      await provider.verify();
+
+      await provider.verify()
+
     });
 
     afterAll(async () => {

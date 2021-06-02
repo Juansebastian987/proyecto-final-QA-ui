@@ -1,0 +1,64 @@
+{
+  "consumer": {
+    "name": "GameFront"
+  },
+  "provider": {
+    "name": "GameBack"
+  },
+  "interactions": [
+    {
+      "description": "a request to get all games",
+      "providerState": "There are games",
+      "request": {
+        "method": "GET",
+        "path": "/games"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": [
+          {
+            "id": "1",
+            "name": "Borderlands 3",
+            "developer": "GearBox Software",
+            "year": 2019,
+            "type": "Shooter",
+            "console": "pc"
+          }
+        ],
+        "matchingRules": {
+          "$.body": {
+            "min": 1
+          },
+          "$.body[*].*": {
+            "match": "type"
+          },
+          "$.body[*].id": {
+            "match": "type"
+          },
+          "$.body[*].name": {
+            "match": "type"
+          },
+          "$.body[*].developer": {
+            "match": "type"
+          },
+          "$.body[*].year": {
+            "match": "type"
+          },
+          "$.body[*].type": {
+            "match": "type"
+          },
+          "$.body[*].console": {
+            "match": "type"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

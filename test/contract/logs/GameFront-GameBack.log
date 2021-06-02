@@ -1,0 +1,101 @@
+I, [2021-06-02T17:54:08.909454 #27432]  INFO -- : Registered expected interaction GET /games
+D, [2021-06-02T17:54:08.910454 #27432] DEBUG -- : {
+  "description": "a request to get all games",
+  "providerState": "There are games",
+  "request": {
+    "method": "GET",
+    "path": "/games"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+    },
+    "body": {
+      "json_class": "Pact::ArrayLike",
+      "contents": {
+        "id": {
+          "json_class": "Pact::SomethingLike",
+          "contents": "1"
+        },
+        "name": {
+          "json_class": "Pact::SomethingLike",
+          "contents": "Borderlands 3"
+        },
+        "developer": {
+          "json_class": "Pact::SomethingLike",
+          "contents": "GearBox Software"
+        },
+        "year": {
+          "json_class": "Pact::SomethingLike",
+          "contents": 2019
+        },
+        "type": {
+          "json_class": "Pact::SomethingLike",
+          "contents": "Shooter"
+        },
+        "console": {
+          "json_class": "Pact::SomethingLike",
+          "contents": "pc"
+        }
+      },
+      "min": 1
+    }
+  },
+  "metadata": null
+}
+I, [2021-06-02T17:54:08.941383 #27432]  INFO -- : Received request GET /games
+D, [2021-06-02T17:54:08.942375 #27432] DEBUG -- : {
+  "path": "/games",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "Referer": "http://localhost/",
+    "User-Agent": "Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/16.5.3",
+    "Accept-Language": "en",
+    "Origin": "http://localhost",
+    "Host": "localhost:8080",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2021-06-02T17:54:08.942375 #27432]  INFO -- : Found matching response for GET /games
+D, [2021-06-02T17:54:08.942375 #27432] DEBUG -- : {
+  "status": 200,
+  "headers": {
+  },
+  "body": {
+    "json_class": "Pact::ArrayLike",
+    "contents": {
+      "id": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "1"
+      },
+      "name": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "Borderlands 3"
+      },
+      "developer": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "GearBox Software"
+      },
+      "year": {
+        "json_class": "Pact::SomethingLike",
+        "contents": 2019
+      },
+      "type": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "Shooter"
+      },
+      "console": {
+        "json_class": "Pact::SomethingLike",
+        "contents": "pc"
+      }
+    },
+    "min": 1
+  }
+}
+I, [2021-06-02T17:54:08.973426 #27432]  INFO -- : Verifying - interactions matched
+I, [2021-06-02T17:54:08.989489 #27432]  INFO -- : Cleared interactions
+I, [2021-06-02T17:54:09.005508 #27432]  INFO -- : Writing pact for GameBack to F:/proyecto/test/contract/pacts/gamefront-gameback.json

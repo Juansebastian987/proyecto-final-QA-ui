@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Given an game service When a request to list games is made Should return the correct data 1`] = `
+Array [
+  Object {
+    "console": "pc",
+    "developer": "GearBox Software",
+    "id": "1",
+    "name": "Borderlands 3",
+    "type": "Shooter",
+    "year": 2019,
+  },
+]
+`;
